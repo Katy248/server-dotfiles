@@ -57,8 +57,18 @@ bar {
 	font pango:JetBrainsMono 12
 	position top
 	padding 2px
-	# Workspaces
 	workspace_min_width 30px
+
+	
+	colors {
+		background $bg
+		statusline $text
+		separator $secondary
+		focused_workspace	$primary		$primary		$text
+		active_workspace	$primary_dim	$primary_dim	$bg
+		inactive_workspace	$bg				$bg				$text
+		urgent_workspace	#d79921			#d79921			#ebdbb2
+	}
 }
 
 
