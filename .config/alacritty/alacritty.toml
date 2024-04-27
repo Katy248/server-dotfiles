@@ -1,0 +1,4 @@
+import = [
+  "~/.config/alacritty/alacritty-base.toml",
+  "~/.config/alacritty/gruvbox.toml",
+]

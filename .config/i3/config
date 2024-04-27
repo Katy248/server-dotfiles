@@ -1,0 +1,66 @@
+include ~/.config/i3/keybindings
+include ~/.config/i3/gruvbox
+
+set $mod Mod4
+
+font pango:JetBrainsMono 12
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex-autostart --autostart --environment i3
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+
+# A more modern dmenu replacement is rofi:
+# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+focus_follows_mouse yes
+# mouse_warping output
+
+title_align center
+hide_edge_borders none
+
+gaps inner 10px
+gaps outer 5px
+
+
+bar {
+	tray_output HDMI-2
+	tray_padding 2px
+	status_command i3blocks -c /home/$USER/.config/i3/blocks.conf
+
+	font pango:JetBrainsMono 12
+	position top
+	padding 2px
+	# Workspaces
+	workspace_min_width 30px
+}
+
+
+exec_always feh --bg-fill /home/$USER/Pictures/wallpapers.png
+

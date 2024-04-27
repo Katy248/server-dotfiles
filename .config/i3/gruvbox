@@ -1,0 +1,23 @@
+set $bg				#282828
+set $primary		#458588
+set $primary_dim	#83a598
+set $secondary		#282828
+set $urgent			#d79921
+
+#							border			background	text	indicator
+client.focused				$primary		$primary	$text	$indicator
+client.unfocused			$secondary		$secondary	$text	$secondary
+client.focused_inactive		$secondary		$secondary	$text	$secondary
+client.urgent				$urgent			$urgent		$text	$urgent
+
+bar {
+	colors {
+		background $bg
+		statusline $text
+		separator $secondary
+		focused_workspace	$primary		$primary		$text
+		active_workspace	$primary_dim	$primary_dim	$bg
+		inactive_workspace	$bg				$bg				$text
+		urgent_workspace	#d79921			#d79921			#ebdbb2
+	}
+}
