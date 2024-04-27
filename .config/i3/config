@@ -48,6 +48,12 @@ hide_edge_borders none
 gaps inner 10px
 gaps outer 5px
 
+set $bg				#282828
+set $primary		#458588
+set $primary_dim	#83a598
+set $secondary		#282828
+set $urgent			#d79921
+
 
 bar {
 	tray_output HDMI-2
@@ -59,7 +65,7 @@ bar {
 	padding 2px
 	workspace_min_width 30px
 
-	
+
 	colors {
 		background $bg
 		statusline $text
